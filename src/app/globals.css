@@ -1,46 +1,27 @@
-@import "tailwindcss";
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
 
 @layer base {
   body {
-    @apply bg-black-rich text-white antialiased;
-    background-image:
-      radial-gradient(2px 2px at 20px 30px, #eee, transparent),
-      radial-gradient(2px 2px at 40px 70px, rgba(255,255,255,0.8), transparent),
-      radial-gradient(1px 1px at 90px 40px, #fff, transparent),
-      radial-gradient(1px 1px at 130px 80px, rgba(255,255,255,0.6), transparent);
-    background-repeat: repeat;
-    background-size: 200px 100px;
-    animation: starfield 120s linear infinite;
+    background-color: #0A0A0A;
+    color: white;
+    -webkit-font-smoothing: antialiased;
   }
 }
 
 @layer components {
   .glass-panel {
-    @apply bg-white/5 border border-white/10 backdrop-blur-md rounded-2xl;
-  }
-  
-  .glass-hover {
-    @apply glass-panel hover:bg-white/10 hover:border-purple-royal/50 transition-all duration-300;
+    background: rgba(255, 255, 255, 0.05);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    backdrop-filter: blur(16px);
+    border-radius: 16px;
   }
   
   .sovereign-text {
-    @apply bg-clip-text text-transparent bg-gradient-to-r from-gold-primary via-gold-bright to-gold-primary;
-  }
-}
-
-@keyframes starfield {
-  0% { background-position: 0% 0%; }
-  100% { background-position: 100% 100%; }
-}
-o
-
-@layer base {
-  body {
-    background-color: #0A0A0A;
-    color: white;
-    -webkit-font-smoothing: antialiased;
+    background: linear-gradient(to right, #FFD700, #FFED4E, #FFD700);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
   }
 }
