@@ -2,6 +2,7 @@
 import { motion } from 'framer-motion';
 import { BookOpen, Video, FileText, Award } from 'lucide-react';
 import { Button } from '@/components/ui/Button';
+import { cn } from '@/lib/utils';
 
 const resources = [
   { icon: BookOpen, title: 'Free Courses', color: 'text-[var(--color-gold-primary)]', bg: 'bg-[var(--color-gold-primary)]/10' },
