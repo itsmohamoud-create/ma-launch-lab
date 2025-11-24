@@ -1,15 +1,13 @@
-# 4️⃣  FREE RESOURCES
-cat > src/components/sections/FreeResources.tsx << 'EOF'
 'use client';
 import { motion } from 'framer-motion';
 import { BookOpen, Video, FileText, Award } from 'lucide-react';
 import { Button } from '@/components/ui/Button';
 
 const resources = [
-  { icon: BookOpen, title: 'Free Courses',       color: 'text-[var(--color-gold-primary)]', bg: 'bg-[var(--color-gold-primary)]/10' },
-  { icon: Video,    title: 'Video Library',      color: 'text-[var(--color-purple-royal)]', bg: 'bg-[var(--color-purple-royal)]/10' },
-  { icon: FileText, title: 'Study Materials',    color: 'text-[var(--color-gold-bright)]',  bg: 'bg-[var(--color-gold-bright)]/10' },
-  { icon: Award,    title: 'Certificates',       color: 'text-[var(--color-purple-light)]', bg: 'bg-[var(--color-purple-light)]/10' },
+  { icon: BookOpen, title: 'Free Courses', color: 'text-[var(--color-gold-primary)]', bg: 'bg-[var(--color-gold-primary)]/10' },
+  { icon: Video, title: 'Video Library', color: 'text-[var(--color-purple-royal)]', bg: 'bg-[var(--color-purple-royal)]/10' },
+  { icon: FileText, title: 'Study Materials', color: 'text-[var(--color-gold-bright)]', bg: 'bg-[var(--color-gold-bright)]/10' },
+  { icon: Award, title: 'Certificates', color: 'text-[var(--color-purple-light)]', bg: 'bg-[var(--color-purple-light)]/10' },
 ];
 
 export function FreeResources() {
@@ -53,4 +51,3 @@ export function FreeResources() {
     </section>
   );
 }
-EOF

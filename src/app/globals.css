@@ -1,27 +1,21 @@
-# 1️⃣  GLOBALS  –  v4-native theme
-cat > src/app/globals.css << 'EOF'
 @import "tailwindcss";
 
 @theme {
   --color-gold-primary: #FFD700;
   --color-gold-bright:  #FFED4E;
   --color-gold-dark:    #B8860B;
-
   --color-purple-royal: #8B5CF6;
   --color-purple-deep:  #6D28D9;
   --color-purple-light: #A78BFA;
-
   --color-black-pure:   #000000;
   --color-black-rich:   #0A0A0A;
   --color-black-velvet: #1A0A2E;
-
-  --animate-float:   float 6s ease-in-out infinite;
-  --animate-glow:    glow 2s ease-in-out infinite alternate;
-  --animate-shine:   shine 3s linear infinite;
+  --animate-float: float 6s ease-in-out infinite;
+  --animate-glow: glow 2s ease-in-out infinite alternate;
+  --animate-shine: shine 3s linear infinite;
   --animate-twinkle: twinkle 4s infinite;
-
   --radius-panel: 16px;
-  --blur-panel:   16px;
+  --blur-panel: 16px;
 }
 
 @layer base {
@@ -61,4 +55,3 @@ cat > src/app/globals.css << 'EOF'
 @media (prefers-reduced-motion: reduce){
   *{animation-duration:0.01ms!important;animation-iteration-count:1!important;transition-duration:0.01ms!important}
 }
-EOF

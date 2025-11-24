@@ -1,5 +1,3 @@
-# 5️⃣  FOOTER
-cat > src/components/sections/Footer.tsx << 'EOF'
 import { Heart } from 'lucide-react';
 
 export function Footer() {
@@ -27,4 +25,3 @@ export function Footer() {
     </footer>
   );
 }
-EOF

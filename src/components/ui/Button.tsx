@@ -1,5 +1,3 @@
-# 2️⃣  BUTTON
-cat > src/components/ui/Button.tsx << 'EOF'
 import { ReactNode, ButtonHTMLAttributes } from 'react';
 import { cn } from '@/lib/utils';
 
@@ -18,4 +16,3 @@ export function Button({ children, variant = 'primary', size = 'md', className, 
   const sizes = { md: 'px-6 py-3 text-base', lg: 'px-8 py-4 text-lg' };
   return <button className={cn(base, styles[variant], sizes[size], className)} {...props}>{children}</button>;
 }
-EOF
