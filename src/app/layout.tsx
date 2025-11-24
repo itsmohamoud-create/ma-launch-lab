@@ -5,18 +5,20 @@ import "./globals.css";
 const inter = Inter({ subsets: ["latin"] });
 
 export const metadata: Metadata = {
-  title: "MA Transform Lab | From Struggle to Sovereign",
-  description: "Systems for Mind, Body & Business Mastery",
+  title: "MA Transform Lab - Mind, Body & Business Mastery",
+  description: "Integrated transformation systems across mental wellness, metabolic health, and AI-powered business growth.",
 };
 
 export default function RootLayout({
   children,
-}: Readonly<{
+}: {
   children: React.ReactNode;
-}>) {
+}) {
   return (
     <html lang="en">
-      <body className={inter.className}>{children}</body>
+      <body className={inter.className}>
+        {children}
+      </body>
     </html>
   );
 }
