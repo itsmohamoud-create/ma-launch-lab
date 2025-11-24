@@ -32,8 +32,6 @@ export function HeroSection() {
           <p className="mt-8 text-sm text-gray-400">Join 10,000+ students transforming their futures</p>
         </motion.div>
       </div>
-
-      <div className="fixed bottom-4 right-4 bg-[var(--color-gold-primary)] text-[var(--color-black-rich)] p-3 rounded-lg font-bold z-50">COLOURS LIVE</div>
     </section>
   );
 }
