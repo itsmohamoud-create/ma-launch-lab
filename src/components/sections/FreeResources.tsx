@@ -1,114 +1,56 @@
-'use client'
-import { motion } from 'framer-motion'
-import { Brain, Rocket, FileCheck } from 'lucide-react'
-import { useState } from 'react'
-import { Button } from '@/components/ui/Button'
+# 4️⃣  FREE RESOURCES
+cat > src/components/sections/FreeResources.tsx << 'EOF'
+'use client';
+import { motion } from 'framer-motion';
+import { BookOpen, Video, FileText, Award } from 'lucide-react';
+import { Button } from '@/components/ui/Button';
+
+const resources = [
+  { icon: BookOpen, title: 'Free Courses',       color: 'text-[var(--color-gold-primary)]', bg: 'bg-[var(--color-gold-primary)]/10' },
+  { icon: Video,    title: 'Video Library',      color: 'text-[var(--color-purple-royal)]', bg: 'bg-[var(--color-purple-royal)]/10' },
+  { icon: FileText, title: 'Study Materials',    color: 'text-[var(--color-gold-bright)]',  bg: 'bg-[var(--color-gold-bright)]/10' },
+  { icon: Award,    title: 'Certificates',       color: 'text-[var(--color-purple-light)]', bg: 'bg-[var(--color-purple-light)]/10' },
+];
 
 export function FreeResources() {
-  const [showModal, setShowModal] = useState(false)
-  const [selectedResource, setSelectedResource] = useState('')
-
-  const resources = [
-    {
-      title: "Mental Wellness Reset",
-      value: "$97 Value",
-      description: "Comprehensive mental wellness protocol",
-      icon: <Brain className="w-12 h-12 text-purple-royal" />
-    },
-    {
-      title: "Growth Starter Kit", 
-      value: "$67 Value",
-      description: "Complete growth acceleration system",
-      icon: <Rocket className="w-12 h-12 text-gold-primary" />
-    },
-    {
-      title: "AI Business Checklist",
-      value: "$47 Value", 
-      description: "Step-by-step AI integration guide",
-      icon: <FileCheck className="w-12 h-12 text-blue-500" />
-    }
-  ]
-
   return (
-    <section className="max-w-7xl mx-auto px-6 py-20">
-      <motion.div
-        initial={{ opacity: 0, y: 20 }}
-        animate={{ opacity: 1, y: 0 }}
-        transition={{ duration: 0.8 }}
-        className="text-center mb-16"
-      >
-        <h2 className="text-5xl font-bold mb-6 sovereign-text">
-          FREE RESOURCES HUB
-        </h2>
-        <p className="text-xl text-gray-300">
-          Transformative tools to jumpstart your sovereignty journey
-        </p>
-      </motion.div>
+    <section className="py-20 px-6">
+      <div className="max-w-7xl mx-auto">
+        <motion.div initial={{ opacity: 0, y: 20 }} whileInView={{ opacity: 1, y: 0 }} transition={{ duration: 0.8 }} viewport={{ once: true }} className="text-center mb-16">
+          <h2 className="text-4xl md:text-5xl font-bold mb-4"><span className="sovereign-text">Free Resources</span></h2>
+          <p className="text-xl text-gray-300 max-w-2xl mx-auto">Everything you need to succeed, <span className="text-[var(--color-gold-bright)] font-semibold">completely free</span></p>
+        </motion.div>
 
-      <div className="grid md:grid-cols-3 gap-8">
-        {resources.map((resource, i) => (
-          <motion.div
-            key={i}
-            initial={{ opacity: 0, y: 50 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ delay: i * 0.2 }}
-            className="glass-hover p-8"
-          >
-            <div className="mb-6">{resource.icon}</div>
-            <h3 className="text-2xl font-bold mb-2">{resource.title}</h3>
-            <p className="text-gold-primary font-bold mb-3">{resource.value}</p>
-            <p className="text-gray-300 mb-6">{resource.description}</p>
-            <Button 
-              className="w-full"
-              onClick={() => {
-                setSelectedResource(resource.title)
-                setShowModal(true)
-              }}
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
+          {resources.map((r, i) => (
+            <motion.div
+              key={r.title}
+              initial={{ opacity: 0, y: 20 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.5, delay: i * 0.1 }}
+              viewport={{ once: true }}
+              className="glass-panel p-6 hover:-translate-y-1"
             >
-              Download Now
-            </Button>
-          </motion.div>
-        ))}
-      </div>
-
-      {showModal && (
-        <div 
-          className="fixed inset-0 bg-black/80 flex items-center justify-center z-50 p-6"
-          onClick={() => setShowModal(false)}
-        >
-          <div 
-            className="glass-panel p-8 max-w-md w-full"
-            onClick={(e) => e.stopPropagation()}
-          >
-            <h3 className="text-2xl font-bold mb-4 sovereign-text">
-              Download {selectedResource}
-            </h3>
-            <form className="space-y-4">
-              <input
-                type="text"
-                placeholder="Full Name"
-                className="w-full bg-black-rich border border-white/20 rounded-lg p-3 focus:border-gold-primary outline-none"
-                required
-              />
-              <input
-                type="email"
-                placeholder="Email Address"
-                className="w-full bg-black-rich border border-white/20 rounded-lg p-3 focus:border-gold-primary outline-none"
-                required
-              />
-              <input
-                type="tel"
-                placeholder="Phone Number"
-                className="w-full bg-black-rich border border-white/20 rounded-lg p-3 focus:border-gold-primary outline-none"
-                required
-              />
-              <Button type="submit" className="w-full">
-                Get Instant Access
-              </Button>
-            </form>
-          </div>
+              <div className={cn('w-12 h-12 rounded-full flex items-center justify-center mb-4', r.bg)}>
+                <r.icon className={cn('w-6 h-6', r.color)} />
+              </div>
+              <h3 className="text-xl font-bold mb-2 text-white">{r.title}</h3>
+              <p className="text-gray-400 mb-4 text-sm">
+                {r.title === 'Free Courses' && 'Access premium-quality courses at no cost. Learn at your own pace with our structured curriculum.'}
+                {r.title === 'Video Library' && 'Hundreds of hours of expert-led video content covering every topic you need to master.'}
+                {r.title === 'Study Materials' && 'Comprehensive notes, practice exercises, and reference guides to accelerate your learning.'}
+                {r.title === 'Certificates' && 'Earn recognized certificates upon completion to showcase your achievements to employers.'}
+              </p>
+              <Button variant="glass" size="md" className="w-full">Access Now</Button>
+            </motion.div>
+          ))}
         </div>
-      )}
+
+        <motion.div initial={{ opacity: 0 }} whileInView={{ opacity: 1 }} transition={{ duration: 0.8, delay: 0.3 }} viewport={{ once: true }} className="text-center mt-12">
+          <Button variant="primary" size="lg">View All Resources</Button>
+        </motion.div>
+      </div>
     </section>
-  )
+  );
 }
+EOF
