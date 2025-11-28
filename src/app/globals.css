@@ -1,18 +1,18 @@
 @import "tailwindcss";
 
 @theme {
-  /* EXACT COLORS FROM YOUR SCREENSHOTS */
-  --color-gold-primary: #FFD700;
-  --color-gold-bright: #FFED4E; 
-  --color-purple-royal: #8B5CF6;
+  /* YOUR ACTUAL BRAND COLORS from all your components */
+  --color-purple-brand: #7C3AED;
+  --color-emerald-brand: #10B981;
+  --color-gold-brand: #F59E0B;
+  --color-black-rich: #0F0F0F;
+  --color-black-velvet: #1A1A1A;
   --color-purple-deep: #6D28D9;
-  --color-black-rich: #0A0A0A;
-  --color-black-velvet: #1A0A2E;
-  --color-orange-accent: #FF6B35;
+  --color-emerald-deep: #059669;
 
-  /* Glass morphism effects */
-  --glass-bg: rgb(255 255 255 / 0.05);
-  --glass-border: rgb(255 255 255 / 0.1);
+  /* Glass effects */
+  --glass-bg: rgb(124 58 237 / 0.05);
+  --glass-border: rgb(124 58 237 / 0.2);
   --glass-blur: blur(16px);
 }
 
@@ -32,11 +32,37 @@
     color: white;
     font-family: system-ui, sans-serif;
     -webkit-font-smoothing: antialiased;
+    
+    /* STARFIELD ANIMATION */
+    background-image: 
+      radial-gradient(2px 2px at 20px 30px, #7C3AED, transparent),
+      radial-gradient(2px 2px at 40px 70px, rgba(16, 185, 129, 0.8), transparent),
+      radial-gradient(1px 1px at 90px 40px, #F59E0B, transparent),
+      radial-gradient(1px 1px at 130px 80px, rgba(124, 58, 237, 0.6), transparent),
+      radial-gradient(2px 2px at 160px 30px, #10B981, transparent);
+    background-repeat: repeat;
+    background-size: 200px 100px;
+    animation: sparkle 20s linear infinite;
+  }
+
+  /* CUSTOM SCROLLBAR */
+  ::-webkit-scrollbar {
+    width: 10px;
+  }
+  ::-webkit-scrollbar-track {
+    background: var(--color-black-velvet);
+  }
+  ::-webkit-scrollbar-thumb {
+    background: var(--color-purple-brand);
+    border-radius: 5px;
+  }
+  ::-webkit-scrollbar-thumb:hover {
+    background: var(--color-gold-brand);
   }
 }
 
 @layer components {
-  /* GLASS CARDS - EXACTLY LIKE YOUR SCREENSHOTS */
+  /* GLASS CARDS */
   .glass-card {
     background: var(--glass-bg);
     border: 1px solid var(--glass-border);
@@ -46,24 +72,29 @@
   }
   
   .glass-card:hover {
-    background: rgb(255 255 255 / 0.1);
-    border-color: var(--color-purple-royal);
+    background: rgb(124 58 237 / 0.1);
+    border-color: var(--color-purple-brand);
     transform: translateY(-4px);
+    box-shadow: 0 8px 32px rgba(124, 58, 237, 0.3);
   }
 
   /* SOVEREIGN TEXT GRADIENT */
   .sovereign-text {
-    background: linear-gradient(135deg, var(--color-gold-primary), var(--color-purple-royal));
+    background: linear-gradient(135deg, var(--color-gold-brand), var(--color-purple-brand));
     -webkit-background-clip: text;
     background-clip: text;
     -webkit-text-fill-color: transparent;
     background-size: 200% auto;
     animation: shine 3s linear infinite;
   }
+}
 
-  @keyframes shine {
-    to {
-      background-position: 200% center;
-    }
-  }
+/* ANIMATIONS */
+@keyframes shine {
+  to { background-position: 200% center; }
+}
+
+@keyframes sparkle {
+  0% { background-position: 0 0; }
+  100% { background-position: 200px 100px; }
 }

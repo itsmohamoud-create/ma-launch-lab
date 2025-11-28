@@ -1,203 +1,187 @@
+import Link from 'next/link';
+import { Rocket, Users, TrendingUp, Award, ArrowRight } from 'lucide-react';
+import Button from '@/components/ui/Button';
+import Card from '@/components/ui/Card';
+import Section from '@/components/ui/Section';
+import StatsCard from '@/components/ui/StatsCard';
+import SocialShare from '@/components/ui/SocialShare';
+
 export default function Home() {
   return (
-    <main className="min-h-screen bg-[var(--color-black-rich)]">
-      {/* HERO SECTION - EXACTLY LIKE YOUR SCREENSHOT */}
-      <section className="min-h-screen flex items-center justify-center px-6">
-        <div className="max-w-6xl mx-auto text-center">
-          <h1 className="text-6xl md:text-8xl font-bold mb-6 sovereign-text">
-            MA Transform Lab
+    <>
+      {/* Hero Section */}
+      <Section className="min-h-screen flex items-center justify-center text-center relative overflow-hidden">
+        <div className="absolute inset-0 bg-gradient-to-br from-[#7C3AED]/20 via-transparent to-[#10B981]/20" />
+        <div className="relative z-10 max-w-5xl mx-auto px-4">
+          <p className="text-[#F59E0B] italic text-lg mb-4 animate-fadeInUp">MA TRANSFORM LAB</p>
+          <h1 className="text-5xl md:text-7xl font-bold mb-6 animate-fadeInUp gradient-text">
+            Ignite Your Growth
           </h1>
-          <p className="text-2xl md:text-3xl text-white mb-8">
-            Transform Your Life Across Every Dimension
+          <h2 className="text-2xl md:text-3xl text-[#D1D5DB] mb-8 animate-fadeInUp">
+            Systems for Mind, Body & Business Mastery
+          </h2>
+          <p className="text-lg text-[#D1D5DB] mb-12 max-w-3xl mx-auto animate-fadeInUp">
+            The strategic educational ecosystem for total performance: Emotional Mastery • Health Optimization • Business Growth
           </p>
-          <p className="text-xl text-gray-300 mb-12 max-w-3xl mx-auto">
-            Unlock your full potential through our integrated transformation system 
-            combining mental wellness, physical health, business growth, and AI-powered optimization.
-          </p>
           
-          {/* STATS GRID - EXACT NUMBERS FROM YOUR SCREENSHOT */}
-          <div className="grid grid-cols-2 md:grid-cols-4 gap-6 mb-16">
-            <div className="glass-card p-6 text-center">
-              <div className="text-3xl font-bold text-[var(--color-gold-primary)]">750</div>
-              <div className="text-gray-300">Human Systems Optimized</div>
-            </div>
-            <div className="glass-card p-6 text-center">
-              <div className="text-3xl font-bold text-[var(--color-gold-primary)]">28</div>
-              <div className="text-gray-300">Businesses Launched</div>
-            </div>
-            <div className="glass-card p-6 text-center">
-              <div className="text-3xl font-bold text-[var(--color-gold-primary)]">15</div>
-              <div className="text-gray-300">Years Experience</div>
-            </div>
-            <div className="glass-card p-6 text-center">
-              <div className="text-3xl font-bold text-[var(--color-gold-primary)]">5</div>
-              <div className="text-gray-300">Continents</div>
-            </div>
+          {/* Animated Stats */}
+          <div className="grid grid-cols-2 md:grid-cols-4 gap-6 mb-12 animate-fadeInUp">
+            <StatsCard title="Human Systems Optimized" value="750+" subtitle="& counting" icon={<TrendingUp className="w-8 h-8" />} />
+            <StatsCard title="Businesses Launched" value="128+" subtitle="Global impact" icon={<Rocket className="w-8 h-8" />} />
+            <StatsCard title="Years Lives Elevated" value="15+" subtitle="Proven track record" icon={<Award className="w-8 h-8" />} />
+            <StatsCard title="Continents of Influence" value="5+" subtitle="Worldwide reach" icon={<Users className="w-8 h-8" />} />
           </div>
 
-          <div className="text-gray-400 mb-12">
-            5 Continents | Canada • UK • Europe • East Africa • Digital Worldwide
-          </div>
-
-          <button className="bg-gradient-to-r from-[var(--color-purple-royal)] to-[var(--color-gold-primary)] text-black font-bold text-lg px-8 py-4 rounded-full hover:opacity-90 transition-opacity">
-            Begin Your Transformation
-          </button>
-        </div>
-      </section>
-
-      {/* FREE RESOURCES - EXACTLY LIKE YOUR SCREENSHOT */}
-      <section className="py-20 px-6 bg-[var(--color-black-velvet)]">
-        <div className="max-w-6xl mx-auto">
-          <h2 className="text-4xl md:text-5xl font-bold text-center mb-16 sovereign-text">
-            Free Resources
-          </h2>
-          
-          <div className="grid md:grid-cols-3 gap-8">
-            <div className="glass-card p-8 text-center">
-              <h3 className="text-2xl font-bold text-white mb-4">Transformation Guide</h3>
-              <p className="text-gray-300 mb-6">Free 47-page guide to start your transformation journey</p>
-              <button className="bg-[var(--color-purple-royal)] text-white px-6 py-3 rounded-full hover:bg-[var(--color-purple-deep)] transition-colors">
-                Download Free
-              </button>
-            </div>
-            
-            <div className="glass-card p-8 text-center">
-              <h3 className="text-2xl font-bold text-white mb-4">Start Assessment</h3>
-              <p className="text-gray-300 mb-6">Free personalized assessment</p>
-              <button className="bg-[var(--color-purple-royal)] text-white px-6 py-3 rounded-full hover:bg-[var(--color-purple-deep)] transition-colors">
-                Begin Assessment
-              </button>
-            </div>
-            
-            <div className="glass-card p-8 text-center">
-              <h3 className="text-2xl font-bold text-white mb-4">Wellness Toolkit</h3>
-              <p className="text-gray-300 mb-6">Free wellness resources and exercises</p>
-              <button className="bg-[var(--color-purple-royal)] text-white px-6 py-3 rounded-full hover:bg-[var(--color-purple-deep)] transition-colors">
-                Get Toolkit
-              </button>
-            </div>
+          {/* CTA Buttons */}
+          <div className="flex flex-col sm:flex-row gap-4 justify-center items-center animate-fadeInUp">
+            <Link href="/assessment">
+              <Button size="lg">Begin Systems Assessment</Button>
+            </Link>
+            <Link href="/courses">
+              <Button size="lg" variant="outline">Join Builders Lab</Button>
+            </Link>
           </div>
         </div>
-      </section>
+      </Section>
 
-      {/* CHALLENGE SECTION - EXACTLY LIKE YOUR SCREENSHOT */}
-      <section className="py-20 px-6">
-        <div className="max-w-6xl mx-auto">
-          <h2 className="text-4xl md:text-5xl font-bold text-center mb-16 sovereign-text">
-            The Challenge We Solve
-          </h2>
-          
-          <div className="glass-card p-8">
-            <h3 className="text-3xl font-bold text-white mb-8 text-center">
-              Are You Feeling Stuck?
-            </h3>
-            
-            <div className="grid md:grid-cols-2 gap-8">
-              <div>
-                <h4 className="text-xl font-bold text-[var(--color-gold-primary)] mb-4">Mental & Emotional</h4>
-                <ul className="text-gray-300 space-y-2">
-                  <li>• Lack of clarity and purpose</li>
-                  <li>• Overwhelm and burnout</li>
-                  <li>• Limited self-confidence</li>
-                  <li>• Emotional instability</li>
-                </ul>
+      {/* Free Resources Section */}
+      <Section className="bg-[#1A1A1A]/50">
+        <div className="text-center mb-12">
+          <h2 className="text-4xl font-bold text-white mb-4">Free Resources to Start Your Journey</h2>
+          <p className="text-xl text-[#D1D5DB]">Begin your transformation today with our complimentary resources</p>
+        </div>
+        <div className="grid md:grid-cols-2 gap-8 max-w-4xl mx-auto">
+          <Card className="card-hover">
+            <h3 className="text-2xl font-bold text-white mb-4">Transformation Guide</h3>
+            <p className="text-[#D1D5DB] mb-6">Free 47-page guide to start your transformation journey with proven frameworks and actionable strategies.</p>
+            <div className="flex gap-4">
+              <Button variant="secondary">Download Free</Button>
+              <Link href="/assessment">
+                <Button>Start Assessment</Button>
+              </Link>
+            </div>
+          </Card>
+          <Card className="card-hover">
+            <h3 className="text-2xl font-bold text-white mb-4">Wellness Toolkit</h3>
+            <p className="text-[#D1D5DB] mb-6">Free wellness resources and exercises to optimize your mental and physical health starting today.</p>
+            <div className="flex gap-4">
+              <Button variant="secondary">Download Free</Button>
+              <Link href="/toolkit">
+                <Button>Access Toolkit</Button>
+              </Link>
+            </div>
+          </Card>
+        </div>
+      </Section>
+
+      {/* Challenge Section */}
+      <Section>
+        <div className="text-center mb-12">
+          <h2 className="text-4xl font-bold text-white mb-4">The Challenge We Solve</h2>
+          <p className="text-2xl text-[#F59E0B]">Are You Feeling Stuck?</p>
+        </div>
+        <div className="grid md:grid-cols-2 gap-12 max-w-5xl mx-auto">
+          <div>
+            <h3 className="text-2xl font-bold text-[#7C3AED] mb-6">Mental & Emotional</h3>
+            <ul className="space-y-4">
+              {['Lack of clarity and purpose', 'Overwhelm and burnout', 'Limited self-confidence', 'Emotional instability'].map((item, i) => (
+                <li key={i} className="flex items-center gap-3">
+                  <div className="w-2 h-2 bg-[#7C3AED] rounded-full" />
+                  <span className="text-[#D1D5DB]">{item}</span>
+                </li>
+              ))}
+            </ul>
+          </div>
+          <div>
+            <h3 className="text-2xl font-bold text-[#10B981] mb-6">Physical & Professional</h3>
+            <ul className="space-y-4">
+              {['Poor health and energy', 'Stagnant career growth', 'Business struggles', 'Outdated skillset'].map((item, i) => (
+                <li key={i} className="flex items-center gap-3">
+                  <div className="w-2 h-2 bg-[#10B981] rounded-full" />
+                  <span className="text-[#D1D5DB]">{item}</span>
+                </li>
+              ))}
+            </ul>
+          </div>
+        </div>
+      </Section>
+
+      {/* Transformation System */}
+      <Section className="bg-[#1A1A1A]/50">
+        <div className="text-center mb-12">
+          <h2 className="text-4xl font-bold text-white mb-4">Our Integrated Transformation System</h2>
+          <p className="text-xl text-[#D1D5DB]">A 4-phase approach to total life transformation</p>
+        </div>
+        <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-8 max-w-6xl mx-auto">
+          {[
+            { phase: 'Phase 1', title: 'Mental & Wellness', desc: 'Master mindset, emotional intelligence, and mental clarity', color: 'purple' },
+            { phase: 'Phase 2', title: 'Health System', desc: 'Optimize your physical health, energy, and metabolic wellness', color: 'emerald' },
+            { phase: 'Phase 3', title: 'Growth & Power', desc: 'Develop personal power, influence, and sustainable growth', color: 'orange' },
+            { phase: 'Phase 4', title: 'Business & AI', desc: 'Build successful businesses and leverage AI for scale', color: 'purple' }
+          ].map((item, i) => (
+            <Card key={i} className="card-hover text-center">
+              <div className={`w-16 h-16 rounded-full bg-gradient-to-br from-[#7C3AED] to-[#10B981] flex items-center justify-center mx-auto mb-4`}>
+                <span className="text-white font-bold">{i + 1}</span>
               </div>
-              
-              <div>
-                <h4 className="text-xl font-bold text-[var(--color-gold-primary)] mb-4">Physical & Professional</h4>
-                <ul className="text-gray-300 space-y-2">
-                  <li>• Poor health and energy</li>
-                  <li>• Stagnant career growth</li>
-                  <li>• Business struggles</li>
-                  <li>• Outdated skillset</li>
-                </ul>
-              </div>
-            </div>
-          </div>
+              <h3 className="text-xl font-bold text-white mb-2">{item.title}</h3>
+              <p className="text-[#D1D5DB] text-sm">{item.desc}</p>
+            </Card>
+          ))}
         </div>
-      </section>
+      </Section>
 
-      {/* PRICING SECTION - EXACTLY LIKE YOUR SCREENSHOT */}
-      <section className="py-20 px-6 bg-[var(--color-black-velvet)]">
-        <div className="max-w-4xl mx-auto">
-          <h2 className="text-4xl md:text-5xl font-bold text-center mb-16 sovereign-text">
-            Digital Products Ecosystem
-          </h2>
-          
-          <div className="grid md:grid-cols-2 gap-8">
-            <div className="glass-card p-8">
-              <h3 className="text-2xl font-bold text-white mb-4">Metabolic Reset</h3>
-              <div className="text-3xl font-bold text-[var(--color-gold-primary)] mb-4">$127</div>
-              <p className="text-gray-300 mb-6">90-day metabolic reset plan with executive meal planning system</p>
-              <ul className="text-gray-300 space-y-2 mb-6">
-                <li>✓ 90-day metabolic reset plan</li>
-                <li>✓ Executive meal planning system</li>
-                <li>✓ Supplement optimization guide</li>
-                <li>✓ Energy tracking spreadsheet</li>
+      {/* Programs Section */}
+      <Section>
+        <div className="text-center mb-12">
+          <h2 className="text-4xl font-bold text-white mb-4">Our Programs</h2>
+          <p className="text-xl text-[#D1D5DB]">Choose the path that fits your transformation goals</p>
+        </div>
+        <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8 max-w-6xl mx-auto">
+          <Card className="card-hover">
+            <div className="text-center">
+              <h3 className="text-2xl font-bold text-[#7C3AED] mb-4">Personal Transformation</h3>
+              <div className="text-3xl font-bold text-white mb-2">$1,997</div>
+              <ul className="text-left space-y-2 mb-6">
+                {['12-week intensive program', '1-on-1 coaching sessions', 'Custom wellness plan', 'AI-powered progress tracking'].map((feature, i) => (
+                  <li key={i} className="flex items-center gap-2 text-[#D1D5DB]">
+                    <div className="w-1.5 h-1.5 bg-[#10B981] rounded-full" />
+                    {feature}
+                  </li>
+                ))}
               </ul>
-              <button className="w-full bg-[var(--color-purple-royal)] text-white py-3 rounded-lg hover:bg-[var(--color-purple-deep)] transition-colors">
-                ADD TO CART
-              </button>
+              <Button className="w-full">Enroll Now</Button>
             </div>
-            
-            <div className="glass-card p-8">
-              <h3 className="text-2xl font-bold text-white mb-4">Digital Business Validator</h3>
-              <div className="text-3xl font-bold text-[var(--color-gold-primary)] mb-4">$47</div>
-              <p className="text-gray-300 mb-6">7-day validation roadmap with market research templates</p>
-              <ul className="text-gray-300 space-y-2 mb-6">
-                <li>✓ 7-day validation roadmap</li>
-                <li>✓ Market research templates</li>
+          </Card>
+          <Card className="card-hover border-2 border-[#F59E0B]">
+            <div className="text-center">
+              <div className="bg-[#F59E0B] text-[#0F0F0F] px-3 py-1 rounded-full text-sm font-bold mb-4">MOST POPULAR</div>
+              <h3 className="text-2xl font-bold text-[#7C3AED] mb-4">Executive Mastery</h3>
+              <div className="text-3xl font-bold text-white mb-2">$5,997</div>
+              <ul className="text-left space-y-2 mb-6">
+                {['12-month executive program', 'Leadership development', 'Enterprise AI strategy', 'Global network access'].map((feature, i) => (
+                  <li key={i} className="flex items-center gap-2 text-[#D1D5DB]">
+                    <div className="w-1.5 h-1.5 bg-[#10B981] rounded-full" />
+                    {feature}
+                  </li>
+                ))}
               </ul>
-              <button className="w-full bg-[var(--color-purple-royal)] text-white py-3 rounded-lg hover:bg-[var(--color-purple-deep)] transition-colors">
-                ADD TO CART
-              </button>
+              <Button className="w-full" variant="secondary">Enroll Now</Button>
             </div>
-          </div>
+          </Card>
+          <Card className="card-hover">
+            <h3 className="text-2xl font-bold text-[#7C3AED] mb-4 text-center">Digital Products Ecosystem</h3>
+            <p className="text-[#D1D5DB] text-center mb-6">Access our complete library of digital tools, templates, and resources for self-paced transformation.</p>
+            <Button className="w-full" variant="outline">Explore Products</Button>
+          </Card>
         </div>
-      </section>
+      </Section>
 
-      {/* FOOTER - EXACTLY LIKE YOUR SCREENSHOT */}
-      <footer className="py-12 px-6 border-t border-gray-800">
-        <div className="max-w-6xl mx-auto text-center">
-          <h3 className="text-2xl font-bold mb-4 sovereign-text">MA Transform Lab</h3>
-          <p className="text-gray-400 mb-8">
-            Transforming lives across mental, physical, business, and AI dimensions.
-          </p>
-          
-          <div className="grid md:grid-cols-3 gap-8 mb-8">
-            <div>
-              <h4 className="font-bold text-white mb-4">Programs</h4>
-              <div className="text-gray-400 space-y-2">
-                <div>Personal Transformation</div>
-                <div>Business Accelerator</div>
-                <div>Executive Mastery</div>
-              </div>
-            </div>
-            
-            <div>
-              <h4 className="font-bold text-white mb-4">Resources</h4>
-              <div className="text-gray-400 space-y-2">
-                <div>Free Guide</div>
-                <div>AI Assessment</div>
-                <div>Wellness Toolkit</div>
-              </div>
-            </div>
-            
-            <div>
-              <h4 className="font-bold text-white mb-4">Connect</h4>
-              <div className="text-gray-400 space-y-2">
-                <div>Contact Us</div>
-                <div>Global Presence</div>
-                <div>Partnerships</div>
-              </div>
-            </div>
-          </div>
-          
-          <div className="text-gray-500 text-sm">
-            © 2024 MA Transform Lab. Transforming lives across 5 continents.
-          </div>
+      {/* Social Share */}
+      <Section className="bg-[#1A1A1A]/50">
+        <div className="max-w-4xl mx-auto text-center">
+          <SocialShare />
         </div>
-      </footer>
-    </main>
+      </Section>
+    </>
   );
 }
