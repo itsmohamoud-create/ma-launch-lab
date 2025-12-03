@@ -1,0 +1,5 @@
+User-Agent: *
+Allow: /
+Disallow: /princess/
+
+Sitemap: https://matransformlab.com/sitemap.xml

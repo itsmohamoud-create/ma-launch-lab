@@ -1,0 +1,9 @@
+{
+  "/_not-found/page": "app/_not-found/page.js",
+  "/(secure)/princess/page": "app/(secure)/princess/page.js",
+  "/(public)/assessment/page": "app/(public)/assessment/page.js",
+  "/page": "app/page.js",
+  "/(public)/legal/privacy/page": "app/(public)/legal/privacy/page.js",
+  "/robots.txt/route": "app/robots.txt/route.js",
+  "/sitemap.xml/route": "app/sitemap.xml/route.js"
+}
